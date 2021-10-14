@@ -23,4 +23,7 @@ basic.forever(function () {
     a += 1
     燈數(a)
     basic.pause(100)
+    if (a == 16) {
+        a = 0
+    }
 })
