@@ -30,26 +30,30 @@ input.onButtonPressed(Button.B, function () {
         basic.pause(100)
     }
 })
-function 燈數2 (num2: boolean) {
-    if (num2 < 6) {
-        x = num2
-        y = 0
-    } else if (num2 >= 6 && num2 < 9) {
-        x = 4
-        y = num2
-    } else if (num >= 9 && num < 14) {
-        x = 13 - num
-        y = 4
-    } else if (num >= 14 && num <= 16) {
+function 燈數2 (num1: number) {
+    if (num1 < 6) {
         x = 0
-        y = 17 - num
+        y = num1 - 1
+    } else if (num1 >= 6 && 0 < 9) {
+        x = num1 - 5
+        y = 4
+    } else if (num1 >= 9 && num1 < 14) {
+        x = 0
+        y = 13 - num1
+    } else if (num1 >= 14 && num1 <= 16) {
+        x = 0
+        y = 17 - num1
     }
+    led.plot(x, y)
+    basic.pause(100)
+    led.unplot(x, y)
 }
-let b = 0
 let y = 0
 let x = 0
+let b = 0
 let a = 0
 a = 0
+b = 0
 basic.forever(function () {
 	
 })
