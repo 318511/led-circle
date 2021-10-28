@@ -12,48 +12,30 @@ function 燈數 (num: number) {
         x = 0
         y = 17 - num
     }
-    led.plot(x, y)
-    basic.pause(100)
-    led.unplot(x, y)
 }
 input.onButtonPressed(Button.A, function () {
-    for (let index = 0; index < 16; index++) {
-        a += 1
-        燈數(a)
-        basic.pause(100)
+    while (!(input.buttonIsPressed(Button.B))) {
+        for (let index = 0; index <= 16; index++) {
+            N = index + 1
+            燈數(index)
+            led.plot(x, y)
+            燈數(index - 1)
+            led.unplot(x, y)
+            basic.pause(100)
+        }
     }
 })
 input.onButtonPressed(Button.B, function () {
-    for (let index = 0; index < 16; index++) {
-        b += 1
-        燈數(b)
+    for (let index = 0; index <= 16; index++) {
+        N = 0 + 1
+        led.plot(x, y)
+        N = 0
+        led.unplot(x, y)
         basic.pause(100)
     }
 })
-function 燈數2 (num1: number) {
-    if (num1 < 6) {
-        x = 0
-        y = num1 - 1
-    } else if (num1 >= 6 && 0 < 9) {
-        x = num1 - 5
-        y = 4
-    } else if (num1 >= 9 && num1 < 14) {
-        x = 0
-        y = 13 - num1
-    } else if (num1 >= 14 && num1 <= 16) {
-        x = 0
-        y = 17 - num1
-    }
-    led.plot(x, y)
-    basic.pause(100)
-    led.unplot(x, y)
-}
+let N = 0
 let y = 0
 let x = 0
-let b = 0
-let a = 0
-a = 0
-b = 0
-basic.forever(function () {
-	
-})
+x = 0
+y = 0
